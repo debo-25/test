@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NEXUS STORE</title>
+    <link rel="stylesheet" href="finalproject1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <input type="checkbox" id="cart-toggle" hidden>
+
+    <header>
+        <nav class="navbar">
+            <h2 class="logo">NEXUS STORE</h2>
+
+
+            <input type="checkbox" id="menu-toggle" class="menu-toggle-input">
+
+
+            <label for="menu-toggle" class="hamburger-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </label>
+
+
+            <ul class="nav-links">
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#home">المنتجات</a></li>
+                <li><a href="#about">عن المتجر</a></li>
+            </ul>
+
+
+            <div class="nav-actions">
+                <a href="#support-modal" class="btn">الدعم</a>
+                <a href="#signin-modal" class="btn">تسجيل الدخول</a>
+                <label for="cart-toggle" class="btn cart-btn">
+                    السلة (<span id="cartCount">0</span>)
+                </label>
+            </div>
+        </nav>
+    </header>
+
+
+    <main id="home" class="products">
+        <div class="card">
+            <img src="./images/monitor.webp" alt="شاشة جيمنج">
+            <h3>شاشة العاب ROG</h3>
+            <p>$220</p>
+            <button onclick="addToCart(220)">اضف الي السلة</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/rtx.jpg" alt="كرت شاشة RTX 4060">
+            <h3>كرت شاشة RTX 4060</h3>
+            <p>$350</p>
+            <button onclick="addToCart(350)">اضف الي السلة</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/chair.webp" alt="كرسي جيمنج">
+            <h3>كرسي العاب احترافي</h3>
+            <p>$180</p>
+            <button onclick="addToCart(180)">اضف الي السلة</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/mouse.jpg" alt="ماوس جيمنج">
+            <h3>ماوس العاب لاسلكي</h3>
+            <p>$45</p>
+            <button onclick="addToCart(45)">اضف الي السلة</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/keyboard.jpg" alt="كيبورد ميكانيكي">
+            <h3>كيبورد ميكانيكي</h3>
+            <p>$85</p>
+            <button onclick="addToCart(85)">اضف الي السلة</button>
+        </div>
+
+        <div class="card">
+            <img src="./images/headset.avif" alt="سماعة جيمنج">
+            <h3>سماعة لاسلكية احترافية</h3>
+            <p>$65</p>
+            <button onclick="addToCart(65)">اضف الي السلة</button>
+        </div>
+    </main>
+
+
+    <div class="cart">
+        <div class="cart-header">
+            <h3>سلة التسوق </h3>
+            <label for="cart-toggle" class="close-btn">&times;</label>
+        </div>
+
+        <div class="cart-body">
+            <p>الإجمالي: <strong id="totalPrice">$0</strong></p>
+        </div>
+
+        <div class="cart-buttons">
+            <button class="btn-checkout" onclick="checkout()">اتمام الشراء</button>
+            <button class="btn-clear" onclick="clearCart()">مسح السلة</button>
+        </div>
+    </div>
+
+
+    <div id="support-modal" class="model">
+        <div class="model-box">
+            <a href="#" class="close-btn">&times;</a>
+            <h3>الدعم الفني</h3>
+            <p class="support-desc">تواصل معنا من خلال:</p>
+
+            <div class="contact-info">
+                <p><strong>الهاتف:</strong> <a href="tel:+201000000000">+20 100 000 0000</a></p>
+                <p><strong>البريد:</strong> <a href="mailto:support@nexus.com">support@nexus.com</a></p>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="signin-modal" class="model">
+        <div class="model-box">
+            <a href="#" class="close-btn">&times;</a>
+            <h3>تسجيل الدخول</h3>
+            <form onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label>البريد الإلكتروني:</label>
+                    <input type="email" placeholder="example@gmail.com" required>
+                </div>
+                <div class="form-group">
+                    <label>كلمة المرور:</label>
+                    <input type="password" placeholder="••••••••" required>
+                </div>
+                <button type="submit" class="submit-btn">دخول</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <span class="icon-box"><i class="fab fa-facebook-f"></i></span>
+            <span class="icon-box x-logo">X</span>
+            <span class="icon-box"><i class="fab fa-instagram"></i></span>
+        </div>
+        <p> NEXUS STORE</p>
+    </footer>
+
+    <script src="finalproject1.js"></script>
+</body>
+
+</html>
